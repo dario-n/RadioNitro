@@ -1,4 +1,4 @@
-package ndj.daro.nitro;
+package ndj.daro.radiotu;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher.ViewFactory;
 
@@ -24,7 +25,7 @@ import java.util.TimerTask;
 public class MainActivity extends Activity {
 
     private MediaPlayer player;
-    private String url = "https://www.rmp-streaming.com/media/bbb-360p.mp4";
+    private String url = "http://server.ohradio.com.ar:9478";
     private ImageButton btnPlay;
     private boolean isPlaying = false;
     private ImageSwitcher imageSwitcher;
@@ -36,6 +37,9 @@ public class MainActivity extends Activity {
     private ImageButton btnTwitter;
     private ImageButton btnFacebook;
     private ImageButton btnInstagram;
+    private ImageButton btnWhatsapp;
+    private Button btnProgramacion;
+    private TextView txtPlaying;
 
 
     @Override
@@ -47,11 +51,13 @@ public class MainActivity extends Activity {
         btnFacebook = findViewById(R.id.facebook);
         btnInstagram = findViewById(R.id.instagram);
         btnTwitter = findViewById(R.id.twitter);
+        btnWhatsapp = findViewById(R.id.whatsapp);
+        btnProgramacion = findViewById(R.id.btnProgramacion);
+        txtPlaying = findViewById(R.id.txtPlaying);
 
 
         setAnimation();
         startSlider();
-
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,12 +66,21 @@ public class MainActivity extends Activity {
             }
         });
 
+        btnProgramacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent = new Intent(MainActivity.this, ProgramacionActivity.class);
+
+                startActivity(viewIntent);
+            }
+        });
+
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent viewIntent =
                         new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://www.facebook.com/radionitrook"));
+                                Uri.parse("https://www.facebook.com/somosradiotu"));
                 startActivity(viewIntent);
             }
         });
@@ -75,7 +90,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent viewIntent =
                         new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://www.instagram.com/radionitrook/"));
+                                Uri.parse("https://www.instagram.com/somosradiotu/"));
                 startActivity(viewIntent);
             }
         });
@@ -85,7 +100,17 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent viewIntent =
                         new Intent("android.intent.action.VIEW",
-                                Uri.parse("https://twitter.com/radionitrook"));
+                                Uri.parse("https://twitter.com/somosradiotu"));
+                startActivity(viewIntent);
+            }
+        });
+
+        btnWhatsapp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse("https://api.whatsapp.com/send?phone=+5491159909078"));
                 startActivity(viewIntent);
             }
         });

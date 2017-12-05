@@ -1,4 +1,4 @@
-package ndj.daro.nitro;
+package ndj.daro.radiotu;
 
 import org.junit.Test;
 

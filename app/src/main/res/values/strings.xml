@@ -1,6 +1,67 @@
 <resources>
-    <string name="app_name">Radio Nitro</string>
-    <string name="facebook">Nitro Facebook</string>
-    <string name="instagram">Nitro Instagram</string>
-    <string name="twitter">Nitro Twitter</string>
+    <string name="app_name">Radio Tu!</string>
+    <string name="facebook">Facebook Tu!</string>
+    <string name="instagram">Instagram Tu!</string>
+    <string name="twitter">Twitter Tu!</string>
+    <string name="whatsapp">WhatsApp Tu!</string>
+    <string name="playButton">Play Button</string>
+    <string name="programacion">Ver Programación</string>
+
+    <!--Titulos-->
+    <string-array name="titles">
+        <item>Alarma Nitro</item>
+        <item>Sin Tiempo</item>
+        <item>Nitro Club</item>
+        <item>La Vuelta Explosiva</item>
+        <item>Trending</item>
+        <item>La Mesa esta Servida</item>
+        <item>Dj Nitro</item>
+        <item>Zona Weekend</item>
+        <item>Queda Mucho por Contar</item>
+        <item>Vale Todo Radio</item>
+        <item>Recreo</item>
+
+    </string-array>
+
+    <!--Descripciones-->
+    <string-array name="desc">
+        <!--Alarma Nitro-->
+        <item>Tomás Passadores, Carolina Guerrero y Federico Rosso te dan el buen día con las principales noticias del día y lo que tenés que saber antes de salir de tu casa.</item>
+        <!--Sin Tiempo-->
+        <item>Todas las mañanas, Robertino Yacoy te presenta un programa de radio totalmente diferente al resto. Junto a Flor Pavon, quien te trae las noticias más locas, Flor Foresi te cuenta todo lo que pasa en el mundo del espectáculo. También Ani Kuper te informa con las noticias más relevantes del día. Además tenes deportes, titulos y mucho más.</item>
+        <!--Nitro Club-->
+        <item>Todas las tardes, Emiliano Cerezo, Fede Zolezzi y Mati Zanan te invitan a su club, para analizar lo que va dejando el día con buena música y secciones especiales cada día en una pura charla de café.</item>
+        <!--La Vuelta Explosiva-->
+        <item>Eze Frezzotti te acompaña en tu vuelta a casa con la mejor selección de música, las noticias más importantes del dia, humor, buena onda.</item>
+        <!--Trending-->
+        <item>Ivo Hlavnicka y Carla Cevasco te traen noticias de actualidad y novedades de Cultura Pop.</item>
+        <!--La Mesa esta Servida-->
+        <item>Jackie Javkin te propone viajar por los aromas gastronómicos y disfrutar de las mejores entrevistas. Un programa de radio hecho con un rico gusto.</item>
+        <!--Dj Nitro-->
+        <item>Gustavo Ruiz crea tu previa con las bandejas de música máa rápida de la radio. La mejor selección para comenzar el fin de semana es DJ Nitro.</item>
+        <!--Zona Weekend-->
+        <item>German Sosnovsky empieza el finde con vos presentándote las mejores canciones de la radio, novedades de música, solidaridad y eventos. Para arrancar el Sábado bien arriba.</item>
+        <!--Queda Mucho por Contar-->
+        <item>Franco Villella junto a Sonia Valdes Olivera y Anto Scarzello demuestran que aún queda mucho por decir sobre deportes, actualidad, ecología y espectáculos en un divertido magazine.</item>
+        <!--Vale Todo Radio-->
+        <item>Valeria Liboreiro y Claudio De Simone junto a su equipo te presentan el programa donde todo puede pasar. Tecnología, espectáculos, actualidad, entrevistas especiales y deportes en un programa ágil y divertido.</item>
+        <!--Recreo-->
+        <item>Llegó la hora de tomarse un recreo en un programa formado por 4 actores, y todo el humor a disposición de que pases una noche a pura risa.</item>
+    </string-array>
+
+    <!--Horarios-->
+    <string-array name="horarios">
+        <item>Lunes a Viernes de 8 a 10hs.</item>
+        <item>Lunes a Viernes de 10 a 13hs.</item>
+        <item>Lunes a Viernes de 13 a 17hs.</item>
+        <item>Lunes a Jueves de 17 a 20hs.</item>
+        <item>Viernes 17 a 20 hs.</item>
+        <item>Martes de 20 a 22hs.</item>
+        <item>Viernes de 22 a 00hs.</item>
+        <item>Sábados de 9 a 13hs.</item>
+        <item>Sábados de 15 a 18hs.</item>
+        <item>Sábados de 18 a 20hs.</item>
+        <item>Sábados de 20 a 22hs.</item>
+    </string-array>
+
 </resources>

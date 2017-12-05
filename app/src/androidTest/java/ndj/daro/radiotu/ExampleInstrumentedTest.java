@@ -1,4 +1,4 @@
-package ndj.daro.nitro;
+package ndj.daro.radiotu;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ndj.daro.nitro", appContext.getPackageName());
+        assertEquals("ndj.daro.radiotu", appContext.getPackageName());
     }
 }
