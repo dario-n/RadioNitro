@@ -5,7 +5,7 @@
     <string name="twitter">Twitter Tu!</string>
     <string name="whatsapp">WhatsApp Tu!</string>
     <string name="playButton">Play Button</string>
-    <string name="programacion">Ver Programación</string>
+    <string name="progra">Ver Programación</string>
 
     <!--Titulos-->
     <string-array name="titles">

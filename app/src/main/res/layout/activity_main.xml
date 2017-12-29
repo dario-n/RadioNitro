@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#5134a8"
+    android:id="@+id/mainLayout"
+    android:background="@drawable/background"
     >
 
     <LinearLayout
@@ -19,11 +20,30 @@
             android:layout_height="250dp"
             android:layout_weight="1">
         </ImageSwitcher>
-        <TextView
-            android:id="@+id/txtPlaying"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_weight="0.5"
+                android:gravity="end" />
+            <TextView
+                android:id="@+id/txtRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:textColor="#f00"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_weight="0.5"
+                android:gravity="start" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,40 +61,22 @@
                 android:layout_gravity="center_vertical"
                 android:contentDescription="@string/playButton"
                 />
-
-            <Button
-                android:id="@+id/btnProgramacion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/programacion"
-                android:layout_weight="0.5"
-                android:layout_gravity="center_vertical"
-                android:background="@android:color/transparent"
-                />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
-            android:layout_alignParentBottom="true">
+            android:layout_marginBottom="25dp">
 
             <ImageButton
-                android:id="@+id/facebook"
+                android:id="@+id/whatsapp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:contentDescription="@string/facebook"
-                android:src="@drawable/facebook_p" />
-
-            <ImageButton
-                android:id="@+id/instagram"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:contentDescription="@string/instagram"
-                android:src="@drawable/instagram_p" />
+                android:contentDescription="@string/whatsapp"
+                android:src="@drawable/whatsapp_t"
+                android:layout_gravity="bottom"
+                />
 
             <ImageButton
                 android:id="@+id/twitter"
@@ -83,15 +85,40 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/twitter"
-                android:src="@drawable/twitter_p" />
+                android:src="@drawable/twitter_t"
+                android:layout_gravity="bottom"
+                />
+
             <ImageButton
-                android:id="@+id/whatsapp"
+                android:id="@+id/tulogo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
-                android:contentDescription="@string/whatsapp"
-                android:src="@drawable/whatsapp_p" />
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/tuico_t" />
+
+            <ImageButton
+                android:id="@+id/instagram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/instagram"
+                android:src="@drawable/instagram_t"
+                android:layout_gravity="bottom"
+                />
+
+            <ImageButton
+                android:id="@+id/facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/facebook"
+                android:src="@drawable/facebook_t"
+                android:layout_gravity="bottom"
+                />
         </LinearLayout>
     </LinearLayout>
 

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-public class ProgramacionListAdapter extends ArrayAdapter<String> {
+class ProgramacionListAdapter extends ArrayAdapter<String> {
 
     private final Activity context;
     private final String[] itemname;

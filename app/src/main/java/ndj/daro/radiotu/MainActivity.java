@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher.ViewFactory;
@@ -29,8 +30,7 @@ public class MainActivity extends Activity {
     private ImageButton btnPlay;
     private boolean isPlaying = false;
     private ImageSwitcher imageSwitcher;
-    private int[] gallery = {R.drawable.recreo,R.drawable.alarmanitro, R.drawable.alarmanitro, R.drawable.sintiempo, R.drawable.sintiempo, R.drawable.trending, R.drawable.trending
-            , R.drawable.lamesa, R.drawable.lamesa, R.drawable.zona, R.drawable.zona, R.drawable.valetodo, R.drawable.valetodo, R.drawable.recreo};
+    private int[] gallery = {R.drawable.img1, R.drawable.img2, R.drawable.img2, R.drawable.img3, R.drawable.img3, R.drawable.img1};
     private int pos;
     private Timer timer = null;
     private static final Integer DURATION = 3500;
@@ -39,7 +39,10 @@ public class MainActivity extends Activity {
     private ImageButton btnInstagram;
     private ImageButton btnWhatsapp;
     private Button btnProgramacion;
-    private TextView txtPlaying;
+    private ImageButton btnTu;
+    private TextView txtStatus;
+    private TextView txtRadio;
+    private RelativeLayout relative;
 
 
     @Override
@@ -52,8 +55,10 @@ public class MainActivity extends Activity {
         btnInstagram = findViewById(R.id.instagram);
         btnTwitter = findViewById(R.id.twitter);
         btnWhatsapp = findViewById(R.id.whatsapp);
-        btnProgramacion = findViewById(R.id.btnProgramacion);
-        txtPlaying = findViewById(R.id.txtPlaying);
+        btnTu = findViewById(R.id.tulogo);
+        txtStatus = findViewById(R.id.txtStatus);
+        txtRadio = findViewById(R.id.txtRadio);
+        relative = findViewById(R.id.mainLayout);
 
 
         setAnimation();
@@ -66,14 +71,15 @@ public class MainActivity extends Activity {
             }
         });
 
-        btnProgramacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent viewIntent = new Intent(MainActivity.this, ProgramacionActivity.class);
-
-                startActivity(viewIntent);
-            }
-        });
+//        btnProgramacion.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent viewIntent = new Intent(MainActivity.this, ProgramacionActivity.class);
+//
+//                startActivity(viewIntent);
+//
+//            }
+//        });
 
         btnFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,37 +120,47 @@ public class MainActivity extends Activity {
                 startActivity(viewIntent);
             }
         });
+
+        btnTu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse("https://www.radiotu.com.ar"));
+                startActivity(viewIntent);
+            }
+        });
+
     }
-    public void startStreaming(){
+    private void startStreaming(){
         if (!player.isPlaying() && !isPlaying) {
             try {
 
                 Toast.makeText(getApplicationContext(),
-                        "Conectando con la radio...",
+                        "Cargando...",
                         Toast.LENGTH_LONG).show();
-
                 player.reset();
-                player.setDataSource(url);
                 player.setAudioStreamType(AudioManager.STREAM_MUSIC);
-
-                player.setOnPreparedListener(new OnPreparedListener() {
-
-                    public void onPrepared(MediaPlayer mp) {
-
-                        player.start();
-                        isPlaying = true;
-                        btnPlay.setImageResource(R.drawable.pausebutton);
-
-                    }
-                });
-
+                player.setDataSource("http://198.7.61.133:9478");
                 player.prepareAsync();
-
+                txtStatus.setText("Conectando a la Radio...");
             } catch (IllegalArgumentException | SecurityException
                     | IllegalStateException | IOException e) {
                 Toast.makeText(getApplicationContext(),
                         "Error al conectar con la radio", Toast.LENGTH_LONG).show();
             }
+            player.setOnPreparedListener(new OnPreparedListener() {
+
+                public void onPrepared(MediaPlayer mp) {
+
+                    player.start();
+                    isPlaying = true;
+                    btnPlay.setImageResource(R.drawable.pausebutton);
+                    txtStatus.setText("En Vivo ");
+                    txtRadio.setText(" Radio TU!");
+
+                }
+            });
         }
         else if (!player.isPlaying() && isPlaying) {
             player.start();
@@ -155,7 +171,7 @@ public class MainActivity extends Activity {
             btnPlay.setImageResource(R.drawable.playbutton);
         }
     }
-    public void setAnimation() {
+    private void setAnimation() {
         imageSwitcher = findViewById(R.id.imgSwitcher);
         imageSwitcher.setFactory(new ViewFactory() {
 
@@ -168,7 +184,7 @@ public class MainActivity extends Activity {
         imageSwitcher.setInAnimation(fadeIn);
         imageSwitcher.setOutAnimation(fadeOut);
     }
-    public void startSlider() {
+    private void startSlider() {
         timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
 
@@ -186,6 +202,7 @@ public class MainActivity extends Activity {
 
         }, 1000, DURATION);
     }
+
 
     @Override
     protected void onPause() {
@@ -208,5 +225,4 @@ public class MainActivity extends Activity {
             startSlider();
         }
     }
-
 }
